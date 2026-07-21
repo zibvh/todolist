@@ -24,7 +24,7 @@ main{
 }
 .inputheader{
     margin-top: 20px;
-    width: 400px;
+    width: 80vw;
     height: fit-content;
     padding: 20px;
     display: flex;
