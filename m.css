@@ -36,7 +36,7 @@ main{
 }
 .inputheader input{
     border-radius: 10px;
-    width: 200px;
+    width: 175px;
     padding: 5px;
     height: 30px;
     border: solid 0.3px;
@@ -137,6 +137,9 @@ main{
     color: black;
     width: 20px;
     height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 100%;
     padding: 2px;
     cursor: pointer;
