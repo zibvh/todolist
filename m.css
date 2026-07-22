@@ -43,7 +43,7 @@ main{
     font-style: normal;
     font-weight: 400;
     border-radius: 10px;
-    width: 175px;
+    width: 168px;
     padding: 5px;
     height: 30px;
     border: solid 0.3px;
@@ -51,8 +51,8 @@ main{
 }
 
 .inputheader button{
-    width: 55px;
-    height: 35px;
+    width: 49px;
+    height: 32px;
     border-radius: 8.9px;
     border: none;
     font-size: 0.6rem;
