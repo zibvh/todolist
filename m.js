@@ -50,7 +50,21 @@ let writeItem = () => {
     localStorage.setItem("task", JSON.stringify(listArray))
 }
 
+ //finish all logic
+                   // if(e.target.className === "fa-solid fa-arrow-up-from-bracket"){
+                   let  compAll = document.getElementById("finishall")
+                   compAll.addEventListener("click", () => {
+                    listArray.forEach(list => {
+                list.completed = !list.completed
+                localStorage.setItem("task", JSON.stringify(listArray))
+                appendItem()
 
+                    });
+                })  
+                   // }
+
+//append item logic
+//update my array, save it to local storage, update my ui with localstorage
 
 let appendItem = () => {
 todolistparent.innerHTML = ""
@@ -86,17 +100,19 @@ todolistparent.innerHTML = ""
         gap: 8px;
         
         `
+       
         todoListItem.append(iconCon)
         todolistparent.append(todoListItem)
         iconCon.addEventListener("click", (e) => {
+// edit logic
 
-//finish all logic
-            if(e.target.className === "fa-solid fa-arrow-up-from-bracket"){
-                listArray.completed = !listArray[i].completed
-                localStorage.setItem("task", JSON.stringify(listArray))
-                appendItem()
-            }
-            //complete logic
+if(e.target.className === "fa-solid fa-pen-to-square"){
+    let newtext = prompt(`edit item`, listArray[i].text)
+     listArray[i].text = newtext
+    localStorage.setItem("task", JSON.stringify(listArray))
+    appendItem()
+}
+ //complete logic
             if(e.target.className === "fa-solid fa-check"){
                 listArray[i].completed = !listArray[i].completed
                 localStorage.setItem("task", JSON.stringify(listArray))
