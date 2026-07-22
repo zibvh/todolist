@@ -87,7 +87,7 @@ main{
 }
 .header{
     display: flex;
-    gap: 10px;
+    gap: 5px;
     transform: translateY(-20px);
 }
 .items ol li{
