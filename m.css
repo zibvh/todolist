@@ -20,7 +20,7 @@ main{
 }
 .todoinput{
     display: flex;
-    gap: 50px;
+    gap: 5px;
 }
 .inputheader{
     margin-top: 20px;
