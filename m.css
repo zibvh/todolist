@@ -24,7 +24,10 @@ main{
 }
 .inputheader{
     margin-top: 20px;
-    width: 70%;
+    width: 72%;
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
     height: fit-content;
     padding: 20px;
     display: flex;
@@ -35,6 +38,10 @@ main{
     box-shadow: -4px 4px 4px rgb(109, 109, 77);
 }
 .inputheader input{
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
     border-radius: 10px;
     width: 175px;
     padding: 5px;
@@ -78,18 +85,40 @@ main{
     list-style: none;
     gap: 0.3rem;
 }
+.header{
+    display: flex;
+    gap: 10px;
+    transform: translateY(-20px);
+}
 .items ol li{
     line-height: 2rem;
     background-color: rgb(252, 241, 241);
     border-radius: 15px;
     padding: 5px;
+    font-family: "WDXL Lubrifont JP N", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.items input{
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+.items ol li .fa-regular {
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    /* border-radius: 50%; */
+    color: brown;
+    cursor: pointer;
+
 }
 .items ol li .fa-solid {
     width: 20px;
     height: 20px;
     padding: 4px;
-    border-radius: 50%;
-    background-color: brown;
+    /* border-radius: 50%; */
+    color: brown;
     cursor: pointer;
 
 }

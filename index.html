@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="m.css">
+    <title>Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Nabla&family=Noto+Sans+JP:wght@100..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="m.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -16,7 +22,9 @@
 </div>
     <main>
         <div class="inputheader">
-            <h1>My todo list</h1>
+           <div class="header">
+            <img src="mylogo.png" alt=""> <h1>My todo list</h1>
+           </div>
             <div class="todoinput">
                 <input type="text" id="item" placeholder="enter a task..."><button id="submit"><i class="fa-solid fa-arrow-up-from-bracket"></i></button><button id="finishall"><i class="fa-solid fa-check-double"></i></button>
             </div>
@@ -26,6 +34,7 @@
         <ol class="todolist">
             
         </ol>
+        
         </div>
     </main>
     <script src="m.js"></script>

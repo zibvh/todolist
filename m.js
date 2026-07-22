@@ -72,7 +72,10 @@ todolistparent.innerHTML = ""
         document.querySelector("p").style.display = "none"
         let todoListItem = document.createElement("li")
         let todoListItemSpan = document.createElement("span")
-        todoListItem.append(todoListItemSpan)
+        todoListItem.append(todoListItemSpan)  
+        let editspan = document.createElement("input")
+        todoListItem.append(editspan)
+        editspan.style.display = "none"      
         todoListItemSpan.textContent = listArray[i].text
         todoListItem.style = `
             display: flex;
@@ -92,26 +95,78 @@ todolistparent.innerHTML = ""
 
 
     let iconCon = document.createElement("div")
+    let anothericonCon = document.createElement("div")
+    anothericonCon.innerHTML += `<i class="fa-solid fa-xmark"></i><i class="fa-regular fa-circle-check"></i>`
+    anothericonCon.style = `
+    display: none;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+        `
+
+
     iconCon.innerHTML += `<i class="fa-solid fa-pen-to-square"></i>`
     iconCon.innerHTML += `<i class="fa-solid fa-trash"></i>`
     iconCon.innerHTML += `<i class="fa-solid fa-check"></i>`
         iconCon.style = `
         display: flex;
         gap: 8px;
-        
-        `
+        justify-content: center;
+        align-items: center;
+            `
        
-        todoListItem.append(iconCon)
+            todoListItem.append(iconCon)
+            todoListItem.append(anothericonCon)
         todolistparent.append(todoListItem)
+
         iconCon.addEventListener("click", (e) => {
-// edit logic
+// 
+
+
+
+
+
+//edit logic 1/2
+
 
 if(e.target.className === "fa-solid fa-pen-to-square"){
-    let newtext = prompt(`edit item`, listArray[i].text)
-     listArray[i].text = newtext
-    localStorage.setItem("task", JSON.stringify(listArray))
-    appendItem()
+    todoListItemSpan.style.display="none"
+    editspan.style.display = "flex"
+    iconCon.style.display="none"
+    anothericonCon.style.display="flex"
+    console.log("i was clicked")
+    let newtext = `${listArray[i].text}`
+    editspan.value = newtext
+    
 }
+
+anothericonCon.addEventListener("click", (e) => {
+    //edit logic 2/2
+        if(e.target.className === "fa-regular fa-circle-check"){
+                       listArray[i].text = editspan.value
+            localStorage.setItem("task", JSON.stringify(listArray))
+            appendItem()
+    todoListItemSpan.style.display="flex"
+    editspan.style.display = "none"
+    iconCon.style.display="flex"
+    anothericonCon.style.display="none"
+        }
+//cancel edit logic
+if(e.target.className === "fa-solid fa-xmark"){
+           listArray[i].text = listArray[i].text
+            localStorage.setItem("task", JSON.stringify(listArray))
+            appendItem()
+    todoListItemSpan.style.display="flex"
+    editspan.style.display = "none"
+    iconCon.style.display="flex"
+    anothericonCon.style.display="none"
+}
+
+
+
+        })
+
+
  //complete logic
             if(e.target.className === "fa-solid fa-check"){
                 listArray[i].completed = !listArray[i].completed
